@@ -1,6 +1,6 @@
 # EduAuth
 ## 📌 Description
-The **University Certificate Authenticity Verifier** is an application designed to validate and verify the authenticity of academic certificates.  
+The **EduAuth** is an application designed to validate and verify the authenticity of academic certificates.  
 It helps institutions, employers, and students ensure that certificates are legitimate by leveraging OCR, database checks, and verification workflows.
 
 ---
