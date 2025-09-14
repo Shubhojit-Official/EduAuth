@@ -18,5 +18,17 @@ export const userService = {
 
         return result.rows[0]
 
+    },
+
+    async findUserByEmail(email: string) {
+        const query = `
+        SELECT id, username, email, phoneNumber, institutionName, hashedPassword
+        FROM users
+        WHERE email = $1
+        LIMIT 1
+        `;
+        const result = await pool.query(query, [email]);
+
+        return result.rows[0] || null;
     }
 }
