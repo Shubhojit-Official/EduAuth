@@ -9,7 +9,6 @@ const Appeal = () => {
           <h2>Appeals Management</h2>
           <p>Manage and review appeals here.</p>
           
-          {/* Placeholder content */}
           <div className="appeal-placeholder">
             <div className="placeholder-icon">⚖️</div>
             <h3>Appeal functionality coming soon</h3>
