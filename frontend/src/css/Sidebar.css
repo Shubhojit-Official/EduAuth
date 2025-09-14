@@ -1,0 +1,331 @@
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+}
+
+/* Sidebar Styles */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  background-color: #1e40af; /* Blue background */
+  color: white;
+  transition: width 0.3s ease;
+  z-index: 1000;
+  overflow-x: hidden;
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.sidebar.closed {
+  width: 70px;
+}
+
+/* Desktop specific styles */
+.sidebar.desktop {
+  position: fixed;
+}
+
+/* Mobile specific styles */
+.sidebar.mobile {
+  transform: translateX(-100%);
+  width: 250px !important;
+}
+
+.sidebar.mobile.open {
+  transform: translateX(0);
+}
+
+/* Sidebar Header */
+.sidebar-header {
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.sidebar-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* Navigation */
+.sidebar-nav {
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+.nav-item {
+  margin: 0.25rem 0;
+}
+
+.nav-link {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+  gap: 1rem;
+}
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+/* Active state - White box with blue text */
+.nav-link.active {
+  background-color: white;
+  color: #1e40af; /* Blue text */
+  font-weight: 600;
+  margin: 0 0.5rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-icon {
+  font-size: 1.25rem;
+  min-width: 24px;
+}
+
+.nav-label {
+  white-space: nowrap;
+}
+
+/* FIXED HAMBURGER ANIMATION */
+.hamburger {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1001;
+  background: #1e40af;
+  border: none;
+  border-radius: 4px;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px; /* Add gap between lines */
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.hamburger-line {
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: white;
+  transition: all 0.3s ease;
+  border-radius: 1px;
+  transform-origin: center; /* Important for proper rotation */
+}
+
+/* PROPER CROSS ANIMATION */
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+/* Mobile Overlay */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.content-section {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2 {
+  margin-top: 0;
+  color: #1e40af;
+}
+
+.content-section ul {
+  padding-left: 1.5rem;
+}
+
+.content-section li {
+  margin: 0.5rem 0;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+  }
+  
+  .sidebar.desktop {
+    display: none;
+  }
+  
+  /* Mobile content takes full width */
+  .main-content.mobile {
+    margin-left: 0 !important;
+    padding: 80px 1rem 1rem 1rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .hamburger {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    background: #1e40af;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .sidebar-overlay {
+    display: none;
+  }
+  
+  /* Ensure proper content shifting on desktop */
+  .main-content.desktop {
+    transition: margin-left 0.3s ease;
+  }
+}
+
+/* Smooth transitions for all elements */
+.sidebar,
+.main-content,
+.hamburger-line {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+/* Add these new styles to your existing Sidebar.css */
+
+/* App Layout Container */
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8fafc;
+}
+
+/* Main Content Area */
+.main-content {
+  flex: 1;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  min-height: 100vh;
+  padding-top: 60px; /* Space for navbar only */
+}
+
+.main-content.sidebar-open {
+  margin-left: 250px;
+}
+
+.main-content.sidebar-closed {
+  margin-left: 70px;
+}
+
+.main-content.mobile {
+  margin-left: 0 !important;
+  padding-top: 60px !important;
+}
+
+
+/* Loading Styles */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 60vh;
+  gap: 1rem;
+  color: #6b7280;
+}
+
+.loading-spinner {
+  width: 48px;
+  height: 48px;
+  border: 4px solid #e5e7eb;
+  border-left: 4px solid #3b82f6;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading-container p {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Error Container */
+.error-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  text-align: center;
+  color: #6b7280;
+}
+
+.error-container h2 {
+  color: #ef4444;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.error-container p {
+  font-size: 1rem;
+  margin: 0;
+}
+
+/* Responsive adjustments for the layout */
+@media (max-width: 768px) {
+  .main-content.sidebar-open,
+  .main-content.sidebar-closed {
+    margin-left: 0;
+  }
+}
+
