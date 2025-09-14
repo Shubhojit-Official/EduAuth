@@ -4,23 +4,30 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "tsc --b && node ./dist/index.js"
+    "dev": "nodemon",
+    "build": "tsc -b",
+    "start": "node ./dist/index.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "@types/bcrypt": "^6.0.0",
     "@types/cors": "^2.8.19",
     "@types/dotenv": "^6.1.1",
     "@types/express": "^5.0.3",
     "@types/jsonwebtoken": "^9.0.10",
+    "@types/node": "^24.4.0",
     "@types/pg": "^8.15.5",
+    "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
+    "nodemon": "^3.1.10",
     "pg": "^8.16.3",
+    "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   }
 }
