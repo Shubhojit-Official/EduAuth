@@ -32,3 +32,4 @@ function CardUpload({ fileItem, isMobile, onRemove }){
   )
 }
 export default CardUpload;
+///
