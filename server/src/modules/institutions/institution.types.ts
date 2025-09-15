@@ -1,4 +1,4 @@
-export  interface Institution {
+export interface Institution {
     institutionName: string,
     email: string,
     phoneNumber: string,
