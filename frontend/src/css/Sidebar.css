@@ -1,7 +1,3 @@
-/* Reset and base styles */
-* {
-  box-sizing: border-box;
-}
 
 body {
   margin: 0;
@@ -32,9 +28,7 @@ body {
 }
 
 /* Desktop specific styles */
-.sidebar.desktop {
-  position: fixed;
-}
+
 
 /* Mobile specific styles */
 .sidebar.mobile {
@@ -208,7 +202,6 @@ body {
   /* Mobile content takes full width */
   .main-content.mobile {
     margin-left: 0 !important;
-    padding: 80px 1rem 1rem 1rem;
   }
 }
 
@@ -240,18 +233,17 @@ body {
 /* Add these new styles to your existing Sidebar.css */
 
 /* App Layout Container */
-.app-layout {
+/* .app-layout {
   display: flex;
   min-height: 100vh;
-  background-color: #f8fafc;
-}
+  background-color: #ffffff;
+} */
 
 /* Main Content Area */
 .main-content {
-  flex: 1;
-  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  min-height: 100vh;
-  padding-top: 60px; /* Space for navbar only */
+  /* transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1); */
+  padding-top: 40px;
+
 }
 
 .main-content.sidebar-open {
@@ -269,7 +261,7 @@ body {
 
 
 /* Loading Styles */
-.loading-container {
+/* .loading-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -277,7 +269,7 @@ body {
   height: 60vh;
   gap: 1rem;
   color: #6b7280;
-}
+} */
 
 .loading-spinner {
   width: 48px;
@@ -307,7 +299,7 @@ body {
   justify-content: center;
   height: 50vh;
   text-align: center;
-  color: #6b7280;
+  color: #052b77;
 }
 
 .error-container h2 {

@@ -6,19 +6,13 @@ import { FileQuestionMark } from 'lucide-react';
 
 
 const Dashboard = lazy(() => import('./Dashboard'));
-// const Users = lazy(() => import('./Users'));  
-// const Products = lazy(() => import('./Products'));
-// const Analytics = lazy(() => import('./Analytics'));
 const Upload = lazy(() => import('./Upload'));
 const Appeal = lazy(() => import('./Appeal'));
-// const Settings = lazy(() => import('./Settings'));
-// const Help = lazy(() => import('./Help'));
 
 // Loading component
 const LoadingSpinner = () => (
-  <div className="loading-container">
+  <div className="global-loading-spinner">
     <div className="loading-spinner"></div>
-    <p>Loading...</p>
   </div>
 );
 

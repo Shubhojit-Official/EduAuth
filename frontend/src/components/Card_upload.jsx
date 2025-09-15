@@ -1,4 +1,3 @@
-import React from 'react';
 
 const Card_upload = ({ fileItem, isMobile, onRemove }) => {
   const handleRemove = () => {
@@ -8,9 +7,7 @@ const Card_upload = ({ fileItem, isMobile, onRemove }) => {
   };
 
   return (
-    <div className={`card ${isMobile ? 'mobile-card' : ''}`} style={{ width: '18rem' }}>
-      {/* Remove Button */}
-      
+    <div className={`card ${isMobile ? 'mobile-card' : ''}`} style={{ width: '18rem' }}>      
       {/* Card Image/Preview */}
       {fileItem.file.type.startsWith('image/') ? (
         <img 

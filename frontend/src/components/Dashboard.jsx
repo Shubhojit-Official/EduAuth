@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import '../css/Dashboard.css';
+import './Card'
 import Card_upload from './Card_upload';
+import CardUpload from './CardUpload';
 
 const Dashboard = ({ sidebarOpen, isMobile }) => {
   const [searchQuery, setSearchQuery] = useState('');
@@ -61,7 +63,8 @@ const Dashboard = ({ sidebarOpen, isMobile }) => {
       </nav>
 
       {/* Main Dashboard Content */}
-
+{/* <CardUpload/> */}
+{/* <Card/> */}
     </div>
   );
 };
