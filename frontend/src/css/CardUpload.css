@@ -1,61 +1,143 @@
-.Card-upload-container{
-    border: 1px solid rgb(120, 120, 120);
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    width: 25rem;
-    display: flex;
-    background-color: rgba(0, 0, 0, 0.059);
-    height:280px;
-          box-shadow: 1px 1px 4px rgb(190, 190, 190);
+.upload-container {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+}
 
+.upload-content {
+  max-width: 1000px;
+  margin: 20px auto;
+  padding: 0 15px;
 }
-.text-field-container{
-    margin-top: 5px;
-    align-content: center;
-}
-.input-fields{
-    margin:5px;
-    /* margin-top:10px; */
-    border: 1px solid rgb(120, 120, 120);
-    border-radius: 10px;
-    -webkit-border-radius: 10px;
-    -moz-border-radius: 10px;
-    -ms-border-radius: 10px;
-    -o-border-radius: 10px;
-    padding: 5px;
-              box-shadow: 1px 1px 4px rgb(190, 190, 190);
 
+.upload-area {
+  background-color: #ffffff;
+  border: 2px dashed #d1d5db;
+  padding: 20px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
 }
-.verified{
-        margin: 5px;
-        padding-left: 5px;
-        padding-right: 10px;
-    height: 25px;
-    background-color:rgb(0, 204, 0);
-    width:max-content;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
-              box-shadow: 1px 1px 4px rgb(190, 190, 190);
 
+.upload-area.drag-active {
+  border-color: #667eea;
 }
-.preview{
-    align-content: center;
-    width:fit-content
 
+.upload-area.uploading {
+  opacity: 0.7;
 }
-.card-img-top{
-      height: 200px;
-      width:fit-content;
-      border-radius:10px ;
-      -webkit-border-radius:10px ;
-      -moz-border-radius:10px ;
-      -ms-border-radius:10px ;
-      -o-border-radius:10px ;
-          box-shadow: 1px 1px 4px rgb(190, 190, 190);
+
+.upload-icon {
+  margin-bottom: 10px;
+}
+
+.upload-btn {
+  background-color: #667eea;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.upload-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.upload-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #ffffff;
+}
+
+.upload-table th, .upload-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.upload-table th {
+  background-color: #f3f4f6;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+}
+
+.cert-id {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.status.verified {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.status.pending {
+  background-color: #fef3c7;
+  color: #92400e;
+}
+
+.status.failed {
+  background-color: #fee2e2;
+  color: #b91c1c;
+}
+
+.action-btn {
+  border: none;
+  background: none;
+  font-size: 0.875rem;
+  cursor: pointer;
+  margin-right: 8px;
+}
+
+.action-btn.view {
+  color: #2563eb;
+}
+
+.action-btn.edit {
+  color: #6b7280;
+}
+
+.empty-state {
+  text-align: center;
+  margin-top: 40px;
+  color: #6b7280;
+}
+
+@media (max-width: 768px) {
+  .upload-area {
+    padding: 15px;
+  }
+
+  .upload-btn {
+    padding: 6px 12px;
+    font-size: 0.875rem;
+  }
+
+  .upload-table th, .upload-table td {
+    padding: 10px;
+    font-size: 0.875rem;
+  }
+
+  .cert-id {
+    font-size: 0.7rem;
+  }
+
+  .status {
+    padding: 3px 6px;
+    font-size: 0.7rem;
+  }
 }

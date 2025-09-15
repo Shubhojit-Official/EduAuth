@@ -64,13 +64,11 @@
 }
 
 .upload-content-wrapper.with-sidebar.desktop {
-  /* margin-left: 250px; */
   width: calc(100vw - 250px);
   background-color: white;
 }
 
 .upload-content-wrapper.without-sidebar.desktop {
-  /* margin-left: 70px; */
   width: calc(100vw - 70px);
   background-color: white;
 }
@@ -177,26 +175,114 @@
   transition: width 0.2s ease-in-out;
 }
 
-/* Uploaded Files Section */
-.uploaded-files {
-  margin-top: 30px;
+/* Upload List */
+.upload-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.uploaded-files h3 {
-  font-size: 1.125rem;
-  font-weight: 600;
-  color: #374151;
-  margin-bottom: 16px;
+.upload-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff;
 }
 
-.files-grid {
+.file-info {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 16px;
+  grid-template-columns: 2fr 1fr 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 8px;
 }
 
-.files-grid.mobile-grid {
-  grid-template-columns: 1fr;
+.cert-id {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.status.pending {
+  background-color: #fbbf24;
+  color: #92400e;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.action-btn.view {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  cursor: pointer;
+
+}
+
+.edit-section {
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  padding-top: 12px;
+ /* border: 1px solid black; */
+}
+
+.edit-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 8px;
+  /* border: 1px solid black; */
+
+}
+
+.edit-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  width: 150px;
+}
+
+.edit-form input {
+  padding: 6px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.edit-buttons {
+  margin: 10px;
+  display: flex;
+  margin-left: auto;
+}
+
+.edit-buttons .btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  margin: 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.save-btn {
+  background-color: #3b82f6;
+  color: white;
+  
+}
+
+.remove-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+.retract-btn {
+  background-color: #6b7280;
+  color: white;
 }
 
 /* Empty State */
@@ -215,4 +301,20 @@
 .empty-state p {
   font-size: 0.875rem;
   margin-top: 4px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .upload-content-wrapper {
+    padding: 20px;
+  }
+
+  .file-info {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .edit-form {
+    justify-content: center;
+  }
 }
