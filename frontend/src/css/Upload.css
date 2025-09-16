@@ -1,546 +1,320 @@
+/* =========================
+   Upload Page Styles
+   ========================= */
 
+/* Container */
 .upload-container {
-  width: 100%;
-    right: 0;
-
-  min-height: 100vh;
-  background-color: #f8fafc;
   display: flex;
   flex-direction: column;
-    transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-
-}
-.upload-container.mobile {
-  padding-top: 0;
+  height: 100vh;
+  background: #f9fafb;
+  transition: all 0.3s ease-in-out;
 }
 
-.upload-container.desktop {
-  padding-top: 0;
-}
-
-/* Dashboard Navbar Styles (for Upload page) */
+/* Navbar inside Upload */
 .dashboard-navbar {
   position: fixed;
   top: 0;
+  left: 0;
   right: 0;
   height: 60px;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e2e8f0;
-  z-index: 100;
-  transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background: #fff;
+  border-bottom: 1px solid #e5e7eb;
+  display: flex;
+  align-items: center;
+  z-index: 50;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Sidebar adjustments for navbar */
 .dashboard-navbar.with-sidebar.desktop {
-  left: 250px; /* When sidebar is open on desktop */
+  left: 250px;
+  width: calc(100% - 250px);
 }
 
 .dashboard-navbar.without-sidebar.desktop {
-  left: 70px; /* When sidebar is closed on desktop */
+  left: 70px;
+  width: calc(100% - 70px);
 }
 
 .dashboard-navbar.mobile {
-  left: 0; /* Always full width on mobile */
+  left: 0;
+  width: 100%;
 }
 
-/* Navbar Content */
 .navbar-content {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
-  padding: 0 1.5rem;
-  max-width: 100%;
+  width: 100%;
+  padding: 0 20px;
 }
 
-/* Brand/Logo Section */
 .navbar-brand h1 {
-  margin: 0;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #1e40af;
-  letter-spacing: -0.025em;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #374151;
 }
 
-/* Upload Content Wrapper - Responsive Container */
+/* =========================
+   Upload Content Wrapper
+   ========================= */
 .upload-content-wrapper {
-  flex: 1;
-  margin-top: 60px; /* Account for navbar */
-  padding: 2rem;
-  
-  /* Desktop minimum area constraints */
-  min-width: 800px;
-  max-width: 1400px;
-  margin-left: auto;
-  margin-right: auto;
-  
-  /* Ensure content doesn't get too cramped */
-  width: 100%;
+  padding: 50px;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1), width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Upload Content */
-.upload-content {
-  width: 100%;
-  max-width: 100%;
+.upload-content-wrapper.with-sidebar.desktop {
+  width: calc(100vw - 250px);
+  background-color: white;
 }
 
-/* Upload Area - Responsive with minimum size */
+.upload-content-wrapper.without-sidebar.desktop {
+  width: calc(100vw - 70px);
+  background-color: white;
+}
+
+.upload-content-wrapper.mobile {
+  margin-left: 0;
+  width: 100vw;
+  background-color: white;
+}
+
+/* Upload Area */
 .upload-area {
-  background: white;
-  border: 2px dashed #d1d5db;
-  border-radius: 16px;
-  padding: 4rem 2rem;
+  border: 2px dashed #cbd5e1;
+  border-radius: 0.75rem;
+  padding: 40px;
+  background: #fff;
   text-align: center;
-  transition: all 0.3s ease;
+  cursor: pointer;
   position: relative;
-  margin-bottom: 3rem;
-  
-  /* Desktop minimum dimensions */
-  min-height: 350px;
-  min-width: 600px;
-  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.upload-area:hover {
-  border-color: #667eea;
-  background-color: #f8fafc;
+  transition: border-color 0.3s ease-in-out;
 }
 
 .upload-area.drag-active {
   border-color: #667eea;
-  background-color: #eff6ff;
-  transform: scale(1.02);
-  border-style: solid;
+  background: #f0f4ff;
 }
 
 .upload-area.uploading {
+  opacity: 0.7;
   pointer-events: none;
-  border-color: #667eea;
 }
 
-.upload-area.mobile-upload {
-  padding: 3rem 1rem;
-  border-style: solid;
-  border-width: 1px;
-  min-height: 250px;
-  min-width: unset; /* Remove min-width on mobile */
-}
-
-.upload-area-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  z-index: 1;
-  width: 100%;
-  max-width: 500px;
-}
-
-.upload-icon {
-  margin-bottom: 1rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.upload-area .upload-icon {
+  margin-bottom: 16px;
 }
 
 .upload-area h3 {
-  margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
   font-weight: 600;
   color: #374151;
-  line-height: 1.4;
 }
 
 .upload-area p {
-  margin: 0;
+  font-size: 0.875rem;
   color: #6b7280;
-  font-size: 1rem;
-  text-align: center;
+  margin-bottom: 16px;
 }
 
 .upload-button {
-  background: #1e40af; 
-  color: white;
+  padding: 10px 20px;
+  border-radius: 0.5rem;
+  background: #667eea;
+  color: #fff;
   border: none;
-  padding: 1rem 3rem;
-  border-radius: 12px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  transition: background 0.2s ease-in-out;
 }
 
 .upload-button:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+  background: #5a67d8;
 }
 
 .upload-button:disabled {
-  opacity: 0.6;
+  background: #9ca3af;
   cursor: not-allowed;
-  transform: none;
 }
 
-.upload-button.mobile-button {
-  padding: 1.25rem 3rem;
-  font-size: 1.2rem;
-  border-radius: 15px;
-  min-height: 60px;
-}
-
-/* Centered Progress Bar Overlay */
+/* Upload Progress Overlay */
 .upload-progress-overlay {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(5px);
+  inset: 0;
+  background: rgba(255, 255, 255, 0.85);
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 16px;
-  z-index: 10;
+  border-radius: 0.75rem;
 }
 
 .progress-container-centered {
-  background: white;
-  padding: 2rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
-  min-width: 350px;
-  max-width: 90%;
+  width: 80%;
+  max-width: 400px;
 }
 
 .progress-header {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.progress-title {
-  font-size: 1.1rem;
-  font-weight: 600;
+  margin-bottom: 8px;
+  font-size: 0.875rem;
   color: #374151;
 }
 
-.progress-percentage {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #667eea;
-}
-
 .progress-bar {
-  height: 12px;
-  background-color: #e5e7eb;
-  border-radius: 6px;
+  width: 100%;
+  height: 8px;
+  background: #e5e7eb;
+  border-radius: 4px;
   overflow: hidden;
-  position: relative;
 }
 
 .progress-fill {
   height: 100%;
-  background: #1e40af; 
-  border-radius: 6px;
-  transition: width 0.3s ease;
-  position: relative;
+  background: #667eea;
+  transition: width 0.2s ease-in-out;
 }
 
-.progress-fill::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-image: linear-gradient(
-    -45deg,
-    rgba(255, 255, 255, 0.2) 25%,
-    transparent 25%,
-    transparent 50%,
-    rgba(255, 255, 255, 0.2) 50%,
-    rgba(255, 255, 255, 0.2) 75%,
-    transparent 75%,
-    transparent
-  );
-  background-size: 50px 50px;
-  animation: move 2s linear infinite;
+/* Upload List */
+.upload-list {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-@keyframes move {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 50px 50px;
-  }
+.upload-item {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff;
 }
 
-/* Uploaded Files Section */
-.uploaded-files {
-  margin-top: 3rem;
-}
-
-.uploaded-files h3 {
-  margin: 0 0 2rem 0;
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: #1f2937;
-  text-align: center;
-}
-
-/* Dynamic Grid System - Responsive */
-.files-grid {
+.file-info {
   display: grid;
-  gap: 2rem;
-  margin-top: 2rem;
-  justify-items: center;
+  grid-template-columns: 2fr 1fr 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 8px;
 }
 
-/* Grid layouts based on number of files - Desktop Responsive */
-.files-grid.files-1 {
-  grid-template-columns: 1fr;
-  max-width: 320px;
-  margin: 2rem auto 0;
+.cert-id {
+  font-size: 0.75rem;
+  color: #6b7280;
 }
 
-.files-grid.files-2 {
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 700px;
-  margin: 2rem auto 0;
+.status.pending {
+  background-color: #fbbf24;
+  color: #92400e;
+  padding: 4px 8px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 500;
 }
 
-.files-grid.files-3 {
-  grid-template-columns: repeat(3, 1fr);
-  max-width: 1050px;
-  margin: 2rem auto 0;
+.action-btn.view {
+  background: none;
+  border: none;
+  color: #3b82f6;
+  cursor: pointer;
+
 }
 
-.files-grid.files-4 {
-  grid-template-columns: repeat(2, 1fr);
-  max-width: 700px;
-  margin: 2rem auto 0;
+.edit-section {
+  border-top: 1px solid #e5e7eb;
+  display: flex;
+  padding-top: 12px;
+ /* border: 1px solid black; */
 }
 
-/* Mobile grid adjustments */
-.files-grid.mobile-grid {
-  grid-template-columns: 1fr !important;
-  gap: 1.5rem;
-  max-width: 100% !important;
+.edit-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 8px;
+  /* border: 1px solid black; */
+
+}
+
+.edit-form label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.875rem;
+  width: 150px;
+}
+
+.edit-form input {
+  padding: 6px 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 0.875rem;
+}
+
+.edit-buttons {
+  margin: 10px;
+  display: flex;
+  margin-left: auto;
+}
+
+.edit-buttons .btn {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  margin: 10px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.save-btn {
+  background-color: #3b82f6;
+  color: white;
+  
+}
+
+.remove-btn {
+  background-color: #ef4444;
+  color: white;
+}
+
+.retract-btn {
+  background-color: #6b7280;
+  color: white;
 }
 
 /* Empty State */
 .empty-state {
   text-align: center;
-  padding: 4rem 2rem;
+  margin-top: 40px;
   color: #6b7280;
-  min-height: 300px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.empty-state-icon {
-  margin-bottom: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .empty-state h3 {
-  margin: 0 0 1rem 0;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: #374151;
+  font-size: 1.125rem;
+  font-weight: 500;
+  margin-top: 12px;
 }
 
 .empty-state p {
-  margin: 0;
-  font-size: 1rem;
-  max-width: 400px;
+  font-size: 0.875rem;
+  margin-top: 4px;
 }
 
-/* Large Desktop Screens (1400px+) */
-@media (min-width: 1400px) {
-  .upload-content-wrapper {
-    max-width: 1600px;
-    padding: 3rem;
-  }
-  
-  .upload-area {
-    min-height: 400px;
-    min-width: 800px;
-    padding: 5rem 3rem;
-  }
-  
-  .upload-area h3 {
-    font-size: 1.75rem;
-  }
-  
-  .upload-area p {
-    font-size: 1.1rem;
-  }
-}
-
-/* Medium Desktop Screens (1200px - 1399px) */
-@media (min-width: 1200px) and (max-width: 1399px) {
-  .upload-content-wrapper {
-    max-width: 1200px;
-    padding: 2.5rem;
-  }
-  
-  .upload-area {
-    min-height: 375px;
-    min-width: 700px;
-  }
-}
-
-/* Small Desktop/Large Tablet (992px - 1199px) */
-@media (min-width: 992px) and (max-width: 1199px) {
-  .upload-content-wrapper {
-    min-width: 700px;
-    max-width: 1000px;
-    padding: 2rem;
-  }
-  
-  .upload-area {
-    min-height: 350px;
-    min-width: 600px;
-  }
-  
-  .files-grid.files-3 {
-    grid-template-columns: repeat(2, 1fr);
-    max-width: 700px;
-  }
-}
-
-/* Tablet Screens (768px - 991px) */
-@media (min-width: 768px) and (max-width: 991px) {
-  .upload-content-wrapper {
-    min-width: unset;
-    padding: 1.5rem;
-  }
-  
-  .upload-area {
-    min-height: 300px;
-    min-width: 500px;
-    padding: 3rem 1.5rem;
-  }
-  
-  .files-grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-    max-width: 100% !important;
-  }
-}
-
-/* Mobile Responsive (768px and below) */
+/* Responsive */
 @media (max-width: 768px) {
-  .navbar-content {
-    padding: 0 1rem;
-  }
-  
-  .navbar-brand h1 {
-    font-size: 1.25rem;
-  }
-  
   .upload-content-wrapper {
-    min-width: unset;
-    padding: 1rem;
-    margin-top: 60px;
+    padding: 20px;
   }
-  
-  .upload-area {
-    padding: 2rem 1rem;
-    min-height: 250px;
-    min-width: unset;
-  }
-  
-  .upload-area h3 {
-    font-size: 1.25rem;
-  }
-  
-  .upload-area p {
-    font-size: 0.9rem;
-  }
-  
-  .progress-container-centered {
-    min-width: 300px;
-    padding: 1.5rem;
-  }
-  
-  .files-grid {
-    grid-template-columns: 1fr !important;
-    max-width: 100% !important;
-  }
-  
-  .empty-state {
-    padding: 2rem 1rem;
-    min-height: 200px;
-  }
-}
 
-/* Small Mobile (480px and below) */
-@media (max-width: 480px) {
-  .navbar-brand h1 {
-    font-size: 1.1rem;
+  .file-info {
+    grid-template-columns: 1fr;
+    gap: 8px;
   }
-  
-  .upload-content-wrapper {
-    padding: 0.75rem;
-  }
-  
-  .upload-area {
-    padding: 1.5rem 0.75rem;
-    min-height: 200px;
-  }
-  
-  .upload-area h3 {
-    font-size: 1.1rem;
-  }
-  
-  .upload-button {
-    padding: 1rem 2rem;
-    font-size: 1rem;
-  }
-  
-  .progress-container-centered {
-    min-width: 280px;
-    padding: 1.25rem;
-  }
-}
 
-/* Progress overlay animation */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.upload-progress-overlay {
-  animation: fadeIn 0.3s ease;
-}
-
-/* Touch-friendly improvements */
-@media (hover: none) and (pointer: coarse) {
-  .upload-button:hover:not(:disabled) {
-    transform: none;
-  }
-}
-
-/* Ensure proper spacing on very wide screens */
-@media (min-width: 1600px) {
-  .upload-content-wrapper {
-    max-width: 1800px;
+  .edit-form {
+    justify-content: center;
   }
 }
