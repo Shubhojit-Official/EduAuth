@@ -52,10 +52,10 @@ const Dashboard = ({ sidebarOpen, isMobile }) => {
   ];
 
   return (
-    <div className="pt-6 w-screen h-screen bg-slate-100">
+    <div className={`pt-6 w-screen h-screen bg-slate-100 ${sidebarOpen && !isMobile ? 'left-[250px] w-[calc(100vw-250px)]' : !isMobile ? 'left-[70px] w-[calc(100vw-70px)]' : 'left-0 w-full'}`}>
       {/* Navbar */}
       <nav className={`fixed top-0 right-0 h-[70px] bg-white border-b border-gray-200 shadow z-50 transition-all duration-300 ease-in-out
-        ${sidebarOpen && !isMobile ? 'left-[250px]' : !isMobile ? 'left-[70px]' : 'left-0 w-full'}`}>
+        ${sidebarOpen && !isMobile ? 'left-[250px] w-[calc(100vw-250px)]' : !isMobile ? 'left-[70px]' : 'left-0 w-full'}`}>
         <div className="flex items-center justify-between h-full px-6 sm:px-8">
           <div>
             <h1 className="text-xl font-bold text-blue-900 ml-12 sm:ml-0">EduAuth</h1>
@@ -96,7 +96,7 @@ const Dashboard = ({ sidebarOpen, isMobile }) => {
       </nav>
 
       {/* Main Content */}
-      <div className={`overflow-y-auto sm:w-[calc(100vw-70px)] ${sidebarOpen && !isMobile ? 'left-[250px] w-[calc(100vw-250px)]' : !isMobile ? 'left-[70px]' : 'left-0 w-full'}`}   >
+      <div className={`overflow-y-auto  ${sidebarOpen && !isMobile ? 'left-[250px] w-[calc(100vw-250px)]' : !isMobile ? 'left-[70px]' : 'left-0 w-full'}`}   >
         <div className="p-4 sm:p-6 space-y-6">
           {/* Statistics Cards */}
           <div className="sm:w-100 grid grid-cols-1 sm:grid-cols-3 gap-4">
