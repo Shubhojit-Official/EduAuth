@@ -1,10 +1,13 @@
-import { LayoutDashboard, Home, StickyNote, Layers, Flag, Calendar, LifeBuoy, Settings } from "lucide-react";
 import Sidebar from "./components/Sidebar"
+import { LandingPage } from "./pages/landingPage";
 
 export default function App() {
   return (
     <>
-      <div className="flex">
+      <div>
+        {/*
+        <LandingPage />
+        */}
         <Sidebar />
       </div>
     </>
