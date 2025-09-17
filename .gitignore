@@ -105,4 +105,4 @@ coverage.xml
 # ========================================
 data_t
 services/data
-services/ocr/preprocess_debug
+preprocess_debug
