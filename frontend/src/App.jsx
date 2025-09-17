@@ -6,9 +6,9 @@ export default function App() {
     <>
       <div>
         {/*
-        <LandingPage />
-        */}
         <Sidebar />
+        */}
+        <LandingPage />
       </div>
     </>
   );
