@@ -3,7 +3,7 @@ import { IoSettingsOutline } from "react-icons/io5";
 
 export const Navbar = () => {
     return(
-        <div className="px-10 py-5 flex justify-between border-b border-black/20">
+        <div className="px-10 py-2 flex justify-between border-b border-black/20">
             <div className="flex gap-5 cursor-pointer">
                 <div className="bg-blue-600 p-2 rounded-lg">
                     <FaShieldHalved className="text-white text-4xl"/>
