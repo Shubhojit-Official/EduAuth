@@ -52,7 +52,7 @@ const Dashboard = ({ sidebarOpen, isMobile }) => {
   ];
 
   return (
-    <div className={`pt-6 w-screen h-screen bg-slate-100 ${sidebarOpen && !isMobile ? 'left-[250px] w-[calc(100vw-250px)]' : !isMobile ? 'left-[70px] w-[calc(100vw-70px)]' : 'left-0 w-full'}`}>
+    <div className={`pt-6 w-screen h-screen bg-slate-100 ${sidebarOpen && !isMobile ? 'left-[250px] w-[calc(100vw-249px)]' : !isMobile ? 'left-[70px] w-[calc(100vw-69px)]' : 'left-0 w-full'}`}>
       {/* Navbar */}
       <nav className={`fixed top-0 right-0 h-[70px] bg-white border-b border-gray-200 shadow z-50 transition-all duration-300 ease-in-out
         ${sidebarOpen && !isMobile ? 'left-[250px] w-[calc(100vw-250px)]' : !isMobile ? 'left-[70px]' : 'left-0 w-full'}`}>
@@ -96,7 +96,7 @@ const Dashboard = ({ sidebarOpen, isMobile }) => {
       </nav>
 
       {/* Main Content */}
-      <div className={`overflow-y-auto  ${sidebarOpen && !isMobile ? 'left-[250px] w-[calc(100vw-250px)]' : !isMobile ? 'left-[70px]' : 'left-0 w-full'}`}   >
+      <div className={`overflow-y-auto  ${sidebarOpen && !isMobile ? 'left-[250px] w-[calc(100vw-250px)]' : !isMobile ? 'left-[70px] w-[calc(100vw-70px)]' : 'left-0 w-full'}`}   >
         <div className="p-4 sm:p-6 space-y-6">
           {/* Statistics Cards */}
           <div className="sm:w-100 grid grid-cols-1 sm:grid-cols-3 gap-4">
