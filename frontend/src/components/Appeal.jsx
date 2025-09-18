@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import Navbar_upload from "./Navbar_Upload";
 
 export default function AppealSection({ sidebarOpen, isMobile }) {
   const [appeals] = useState([ //setAppeals

@@ -125,7 +125,7 @@ export default function Upload({ sidebarOpen, isMobile, retractToken }) {
               isUploading ? "opacity-70 pointer-events-none" : "",
             ].join(" ")}
           >
-            <FileUp className="mx-auto mb-4 h-12 w-12 text-indigo-500" />
+            <FileUp className="mx-auto mb-4 h-12 w-12 text-blue-600" />
             <h3 className="text-lg sm:text-xl font-semibold text-slate-700">Upload documents</h3>
             <p className="mb-5 text-sm text-slate-500">
               Drag & drop files here, or click below to browse <br />
@@ -133,7 +133,7 @@ export default function Upload({ sidebarOpen, isMobile, retractToken }) {
             </p>
             <button
               type="button"
-              className="inline-flex items-center rounded-lg bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-indigo-500"
+              className="inline-flex items-center rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-blue-900"
             >
               Choose files
             </button>
