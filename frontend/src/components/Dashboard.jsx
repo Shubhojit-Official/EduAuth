@@ -52,9 +52,9 @@ const Dashboard = ({ sidebarOpen, isMobile }) => {
   ];
 
   return (
-    <div className={`pt-6 w-screen h-screen bg-slate-100 ${sidebarOpen && !isMobile ? 'left-[250px] w-[calc(100vw-250px)]' : !isMobile ? 'left-[70px] w-[calc(100vw-70px)]' : 'left-0 w-full'}`}>
+    <div className={`pt-6 w-[100vw] h-screen bg-slate-100 ${sidebarOpen && !isMobile ? 'left-[250px] w-[calc(100vw-250px)]' : !isMobile ? 'left-[70px] w-[calc(100vw-70px)]' : 'left-0 w-full'}`}>
       {/* Navbar */}
-      <nav className={`fixed top-0 right-0 h-[70px] bg-white border-b border-gray-200 shadow z-50 transition-all duration-300 ease-in-out
+      <nav className={`fixed top-0 right-0 h-[70px] w-[95vw] bg-white border-b border-gray-200 shadow z-50 transition-all duration-300 ease-in-out
         ${sidebarOpen && !isMobile ? 'left-[250px] w-[calc(100vw-250px)]' : !isMobile ? 'left-[70px]' : 'left-0 w-full'}`}>
         <div className="flex items-center justify-between h-full px-6 sm:px-8">
           <div>
@@ -96,17 +96,17 @@ const Dashboard = ({ sidebarOpen, isMobile }) => {
       </nav>
 
       {/* Main Content */}
-      <div className={`overflow-y-auto  ${sidebarOpen && !isMobile ? 'left-[250px] w-[calc(100vw-250px)]' : !isMobile ? 'left-[70px]' : 'left-0 w-full'}`}   >
+      <div className={`${sidebarOpen && !isMobile ? 'left-[250px] w-[calc(100vw-250px)]' : !isMobile ? 'left-[70px]' : 'left-0 w-full'}`}   >
         <div className="p-4 sm:p-6 space-y-6">
           {/* Statistics Cards */}
-          <div className="sm:w-100 grid grid-cols-1 sm:grid-cols-3 gap-4">
+          <div className="sm:w-[91vw] grid grid-cols-1 sm:grid-cols-3 gap-4">
             <StatCard title="Total Certificates" value={stats.total} />
             <StatCard title="Verified Certificates" value={stats.verified} />
             <StatCard title="Pending Certificates" value={stats.pending} />
           </div>
 
           {/* Charts Section */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-[91vw]">
             <div className="bg-white rounded-lg shadow p-4 sm:p-6">
               <h2 className="text-lg font-semibold text-gray-800 mb-4">Certificate Trends</h2>
               <ResponsiveContainer width="100%" height={250}>
@@ -139,7 +139,7 @@ const Dashboard = ({ sidebarOpen, isMobile }) => {
           </div>
 
           {/* Recent Certificates */}
-          <div className="bg-white rounded-lg shadow p-4 sm:p-6">
+          <div className="bg-white rounded-lg shadow p-4 sm:p-6 w-[91vw]">
             <h2 className="text-lg font-semibold text-gray-800 mb-4">Recent Certificates</h2>
             <div className="space-y-3">
               {recentCertificates.map((cert) => (
@@ -159,7 +159,7 @@ const Dashboard = ({ sidebarOpen, isMobile }) => {
           </div>
 
           {/* Blacklisted Users */}
-          <div className="bg-white rounded-lg shadow p-4 sm:p-6">
+          <div className="bg-white rounded-lg shadow p-4 sm:p-6 w-[91vw]">
             <h2 className="text-lg font-semibold text-gray-800 mb-4">Blacklisted Users</h2>
             <div className="space-y-3">
               {blacklistedUsers.map((user) => (
