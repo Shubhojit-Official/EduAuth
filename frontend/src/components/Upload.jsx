@@ -2,7 +2,6 @@ import React, { useState, useRef } from 'react';
 import '../css/Upload.css';
 import '../css/Dashboard.css';
 import { FileUp, CircleAlert } from 'lucide-react';
-import Navbar_upload from './Navbar_upload';
 
 const Upload = ({ sidebarOpen, isMobile }) => {
   const [files, setFiles] = useState([]);
