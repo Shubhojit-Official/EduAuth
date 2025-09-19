@@ -1,5 +1,6 @@
 import { FaFileCircleCheck } from "react-icons/fa6";
 import { MdLockOutline } from "react-icons/md";
+import { Link } from "react-router-dom";
 
 export const Home = () => {
     return (
@@ -14,14 +15,18 @@ export const Home = () => {
             </div>
 
             <div className="flex gap-5">
-                <button className="flex items-center text-white text-lg px-4 py-2 border gap-1 border-blue-600 cursor-pointer rounded-xl font-semibold bg-blue-600">
-                    <FaFileCircleCheck />
-                    Verify Certificate
-                </button>
-                <button className="flex items-center border border-black/40 text-black/80 text-lg px-6 py-2 rounded-xl font-semibold cursor-pointer gap-1">
-                    <MdLockOutline />
-                    Institute Login
-                </button>
+                <Link to="/verifierPage">
+                    <button className="flex items-center text-white text-lg px-4 py-2 border gap-1 border-blue-600 cursor-pointer rounded-xl font-semibold bg-blue-600">
+                        <FaFileCircleCheck />
+                        Verify Certificate
+                    </button>
+                </Link>
+                <Link to="/auth">
+                    <button className="flex items-center border border-black/40 text-black/80 text-lg px-6 py-2 rounded-xl font-semibold cursor-pointer gap-1">
+                        <MdLockOutline />
+                        Institute Login
+                    </button>
+                </Link>
             </div>
         </div>
     )

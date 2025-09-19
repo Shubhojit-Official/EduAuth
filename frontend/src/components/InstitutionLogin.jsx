@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { MoveLeft } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 const InstitutionLogin = () => {
   const [isSignup, setIsSignup] = useState(false);
@@ -178,12 +179,14 @@ const InstitutionLogin = () => {
 
           )}
 
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors"
-          >
-            {isSignup ? "Signup" : "Login"}
-          </button>
+          <Link to="/dashboard">
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition-colors"
+            >
+              {isSignup ? "Signup" : "Login"}
+            </button>
+          </Link>
         </form>
 
         <div className="text-center text-sm text-gray-600">
@@ -211,9 +214,11 @@ const InstitutionLogin = () => {
         </div>
 
       </div>
-      <button className=" m-5 sm:m-10 flex gap-3 items-center text-gray-500 text-xl">
-        <MoveLeft />Back to Home
-      </button>
+      <Link to="/">
+        <button className=" m-5 sm:m-10 flex gap-3 items-center text-gray-500 text-xl">
+          <MoveLeft />Back to Home
+        </button>
+      </Link>
 
     </div>
   );
